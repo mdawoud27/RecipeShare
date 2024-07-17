@@ -1,6 +1,6 @@
 # Portfolio Project: RecipeShare *(*Unfinished yet :)*)*
 
-*ALX Foundation Project* || [Live Demo](https://mdawoud27.github.io/RecipeShare/).
+*ALX Foundation Project* || [live demo](https://mdawoud27.github.io/RecipeShare/)
 
 ## Description
 
