@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 61.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(76, 75, 75, 0.55);
+  background-image: linear-gradient(to right bottom, rgb(173, 173, 255), rgb(77, 77, 243), rgb(0, 0, 128));
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 8vw);
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 9px;
+  /*overflow: hidden;*/
+  box-shadow: 0 2rem 6rem 0.5rem rgba(97, 85, 81, 0.2);
+  display: grid;
+  grid-template-rows: 10rem minmax(100rem, 1fr);
+  /*grid-template-columns: 1fr 2fr;*/
+  grid-template-areas: "head"
+                       "list";
+}
+
+.main {
+  /*border: 1px solid blue;*/
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.open-icon {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  z-index: 400;
+}
+
+.open-icon svg {
+  height: 5rem;
+  width: 5rem;
+  fill: rgb(83, 108, 216);
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid rgb(83, 108, 216);
+  border-radius: 2.5rem;
+  transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+  .open-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .open-icon:hover .search-results {
+      display: block;
+  }
+}
+
+
