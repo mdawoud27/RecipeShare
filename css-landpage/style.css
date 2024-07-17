@@ -914,7 +914,7 @@ footer .container {
 }
 
 footer .image img {
-    width: 12rem;
+    width: 11rem;
 }
 
 @media (max-width: 991px) {
@@ -1047,7 +1047,7 @@ footer hr {
 
 footer .copyright {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -1062,9 +1062,26 @@ footer .copyright > p {
     font-weight: normal;
 }
 
+footer .copyright > p a,
+footer .copyright > p a:visited {
+    color: var(--main-color);
+    transition: var(--transition);
+}
+
+footer .copyright > p a:hover {
+    color: var(--alt-color);
+}
+
+footer .copyright > p a:active {
+    opacity: 0.5;
+}
+
 @media (max-width: 767px) {
     footer .copyright > p {
         font-size: 0.8rem;
+    }
+    footer .copyright > p:nth-child(2) {
+        margin-top: 1rem;
     }
 }
 
