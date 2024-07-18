@@ -1,6 +1,6 @@
 /* Start Header section */
 header {
-    background-color: var(--alt-background);
+    background-color: transparent; /* var(--alt-background);*/
     position: absolute;
     left: 0;
     width: 100%;
@@ -48,15 +48,21 @@ nav ul {
 
 nav ul li a {
     display: block;
-    color: var(--alt-color);
+    color: white;
     padding: 0 1.5rem;
     transition: var(--transition);
 }
 
 nav ul li a:hover {
     text-decoration: underline;
-    color: var(--alt-color);
+    color: var(--main-color);
     opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    nav ul li a {
+        color: var(--alt-color);
+    }
 }
 
 @media (max-width: 991px) {
@@ -99,6 +105,7 @@ nav button:active {
 .toggle-menu {
     font-size: 1.4rem;
     cursor: pointer;
+    color: white;
 } 
 
 @media (min-width: 768px) {
@@ -112,10 +119,22 @@ nav button:active {
 /* start landing section */
 .landing {
     padding: var(--main-padding) 0;
-    background-color: var(--alt-background);
+    background-image: url(../images/bk.jpg);
+    background-size: cover;
     height: 100vh;
     position: relative;
     z-index: 6;
+}
+
+.landing::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -5;
 }
 
 .landing .container {
@@ -143,7 +162,7 @@ nav button:active {
 }
 
 .landing-content .text h1 {
-    color: var(--alt-color);
+    color: white;
     font-size: 4rem;
     font-weight: normal;
 }
@@ -153,7 +172,7 @@ nav button:active {
 }
 
 .landing-content .text h1 + p {
-    color: var(--alt-color);
+    color: white;
     font-size: 1.3rem;
     margin-top: 1.6rem;
     margin-bottom: 2.5rem;
@@ -179,7 +198,7 @@ nav button:active {
     font-weight: normal;
     margin-top: 2.5rem;
     margin-bottom: -1rem;
-    color: var(--alt-color);
+    color: white;
 }
 
 .landing-img {
@@ -204,7 +223,7 @@ nav button:active {
     right: 9rem;
     margin-top: 1rem;
     font-style: italic;
-    color: #555;
+    color: white;
     animation: moveUpDown 3s ease-in-out infinite;
 }
 
@@ -810,7 +829,8 @@ nav button:active {
 .opinion {
     color: white;
     position: relative;
-    background-color: white;
+    background-color: var(--alt-background);
+    padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
 
@@ -895,6 +915,89 @@ nav button:active {
     color: #ebebebde;
 }
 /* End opinion section */
+
+/* start About Section */
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    /* background-image: url(../images/bk.jpg);
+    background-size: cover; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .about::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -5;
+} */
+
+.about .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about .container h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.about .container p {
+    line-height: 1.5;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+}
+
+.team-member p {
+    color: var(--pragraph-color);
+    margin-right: 0.2rem;
+}
+
+.team-member a,
+.repo-here {
+    color: var(--main-color);
+}
+
+.team-member a:hover,
+.team-member ul li,
+.repo-here:hover {
+    color: var(--alt-color);
+}
+
+.team-member a:active,
+.repo-here:active {
+    opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+    .about .container {
+        align-items: center;
+    }
+
+    .about .container p {
+        text-align: center;
+    }
+
+    .team-member {
+        flex-direction: column;
+    }
+
+    .team-member ul {
+        margin-top: 0.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+}
+
+/* end About Section */
 
 /* Start footer section */
 footer {
@@ -1057,22 +1160,57 @@ footer .copyright {
     }
 }
 
-footer .copyright > p {
+footer .copyright > p,
+.made-by p {
     color: var(--pragraph-color);
     font-weight: normal;
 }
 
 footer .copyright > p a,
-footer .copyright > p a:visited {
+footer .copyright > p a:visited,
+.made-by p a,
+.made-by p a:visited {
     color: var(--main-color);
     transition: var(--transition);
 }
 
-footer .copyright > p a:hover {
+footer .copyright > p a:hover,
+.made-by p a:hover {
     color: var(--alt-color);
 }
 
-footer .copyright > p a:active {
+footer .copyright > p a:active,
+.made-by p a:active {
+    opacity: 0.5;
+}
+
+.made-by {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.made-by .appie-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 1.5rem;
+}
+
+footer .copyright .appie-social ul {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.copyright .appie-social ul li a {
+    color: var(--alt-color);
+}
+
+.copyright .appie-social ul li:hover a {
+    color: white;
+}
+
+.copyright .appie-social ul li:active {
     opacity: 0.5;
 }
 
@@ -1083,10 +1221,18 @@ footer .copyright > p a:active {
     footer .copyright > p:nth-child(2) {
         margin-top: 1rem;
     }
+    .made-by {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+    .made-by .appie-social {
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 991px) {
-    footer .copyright > p {
+    footer .copyright > p,
+    .made-by p {
         font-size: 0.8rem;
     }
 }
